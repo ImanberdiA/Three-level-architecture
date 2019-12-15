@@ -10,9 +10,9 @@ namespace WebApiApp.BL.Settings
     {
         public string Property { get; protected set; }
 
-        public ValidException(string message, string prop) : base(message)
+        public ValidException(string ErrorMessage, string property) : base(ErrorMessage)
         {
-            Property = prop;
+            Property = property;
         }
     }
 }

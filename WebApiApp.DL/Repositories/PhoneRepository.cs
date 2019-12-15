@@ -9,11 +9,11 @@ using WebApiApp.DL.Models;
 
 namespace WebApiApp.DL.Repositories
 {
-    public class PhoneRepository : IRepository<Person>
+    public class PersonRepository : IRepository<Person>
     {
         private PersonContext db;
 
-        public PhoneRepository(PersonContext db)
+        public PersonRepository(PersonContext db)
         {
             this.db = db;
         }
@@ -26,7 +26,7 @@ namespace WebApiApp.DL.Repositories
 
         public void Delete(int id)
         {
-            Person person = db.Persons.Find();
+            Person person = db.Persons.Find(id);
             db.Persons.Remove(person);
             db.SaveChanges();
         }
